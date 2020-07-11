@@ -6,6 +6,7 @@
 - Subscribers/consumers can read these written messages as required in an appropriate time-frame
 
 ----------------Producers----------------------------------------->Kafka-------------------------------->Consumers
+
 ----------------Inserting recordsinto these tables---------------->Database Tables---------------------->Reading data
 
 #### Zookeeper 
