@@ -33,3 +33,6 @@
 
 #### AVRO
 AVRO Converter used for Schema registry. It is industry format serialization system. schema in Json format. Language Independent
+
+#### Commands
+
