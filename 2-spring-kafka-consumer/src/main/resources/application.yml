@@ -1,0 +1,15 @@
+server:
+  port: 8881
+
+spring:
+  kafka:
+    producer:
+      group-id: my-app-group
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    bootstrap-servers:
+      - localhost:9092
+
+myapp:
+  topic-name: my-app-topic

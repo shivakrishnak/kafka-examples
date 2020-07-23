@@ -36,3 +36,40 @@ AVRO Converter used for Schema registry. It is industry format serialization sys
 
 #### Commands
 
+##### Topic
+
+> List the topics
+kafka-topics --zookeeper 127.0.0.1:2181 --list
+
+> Create a topic
+kafka-topics --zookeeper 127.0.0.1:2181 --topic first-topic --create --partitions 3 --replication-factor 1
+
+> To view the topic details
+ kafka-topics --zookeeper 127.0.0.1:2181 --topic first-topic --describe
+ 
+> Delete a topic
+kafka-topics --zookeeper 127.0.0.1:2181 --topic first-topic --delete
+
+##### Producers
+
+> to write message to topic
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic first-topic
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic first-topic --producer-property acks=all
+
+> If topic is not present and then it will create a new topic with default partitions and replication-factor
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic new-topic
+
+
+##### Consumers
+
+> to read data from topic
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first-topic
+
+> to read data from topic from the beginning
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first-topic --from-beginning
+
+##### Consumers from group
+
+> kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first-topic --group my-first-app
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first-topic --group my-first-app
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first-topic --from-beginning
