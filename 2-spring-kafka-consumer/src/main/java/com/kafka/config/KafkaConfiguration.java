@@ -19,7 +19,7 @@ public class KafkaConfiguration {
     @Value("${myapp.topic-name}")
     private String topicName;
 
-    @KafkaListener(topics = "first-topic", groupId = "my-app-group")
+    @KafkaListener(topics = "my-topic", groupId = "my-app-group")
     public void listen(ConsumerRecord<?, ?> cr) throws Exception {
         logger.info("------------------------------------------------------------------------");
         logger.info(cr.toString());
