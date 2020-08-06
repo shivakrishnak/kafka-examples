@@ -1,5 +1,5 @@
-FROM openjdk:8
+FROM openjdk:8-alpine
 VOLUME /tmp
 ADD target/spring-kafka-consumer.jar spring-kafka-consumer.jar
-EXPOSE 8881
+EXPOSE 8882
 ENTRYPOINT ["java","-jar","spring-kafka-consumer.jar"]

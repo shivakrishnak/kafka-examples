@@ -2,12 +2,14 @@ version: '3'
 
 services:
   kafka-producer:
-    image: kafka/docker-kafka-producer:0.0.1-SNAPSHOT
+    build: 2-spring-kafka-producer/.
+    image: kafka/docker-kafka-producer
     restart: on-failure
     ports:
       - 8881:8080
   kafka-consumer:
-    image: kafka/docker-kafka-producer:0.0.1-SNAPSHOT
+    build: 2-spring-kafka-consumer/.
+    image: kafka/docker-kafka-consumer
     restart: on-failure
     ports:
-      - 8082:8080
+      - 8882:8080
